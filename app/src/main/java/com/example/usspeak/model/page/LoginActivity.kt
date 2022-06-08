@@ -43,6 +43,7 @@ class LoginActivity : AppCompatActivity() {
             )
             loginUser(request)
         }
+        playAnimation()
     }
 
     private fun loginUser(request: UserRequest) {
@@ -63,6 +64,23 @@ class LoginActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+    }
+
+    private fun playAnimation(){
+        val email = ObjectAnimator.ofFloat(binding.layoutEmail, View.ALPHA, 1F).setDuration(500)
+        val password = ObjectAnimator.ofFloat(binding.layoutPassword, View.ALPHA, 1F).setDuration(500)
+        val login = ObjectAnimator.ofFloat(binding.btnLogin, View.ALPHA, 1F).setDuration(500)
+        val question = ObjectAnimator.ofFloat(binding.tvAcc, View.ALPHA, 1F).setDuration(500)
+
+        AnimatorSet().apply{
+            playTogether(email,password,login,question)
+            startDelay = (500)
+        }.start()
+
+        ObjectAnimator.ofFloat(binding.btnSignup, View.ALPHA, 1F).apply{
+            duration = 1200
+            startDelay = (1200)
+        }.start()
     }
 
     companion object {
