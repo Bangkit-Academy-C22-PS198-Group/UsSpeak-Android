@@ -3,11 +3,11 @@ package com.example.usspeak.model.page
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.usspeak.databinding.ActivityRegisterBinding
 import com.example.usspeak.model.viewmodel.AuthViewModel
@@ -47,26 +47,28 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
-    }
-
-    private fun playAnimation(){
-        val name = ObjectAnimator.ofFloat(binding.layoutName, View.ALPHA, 1F ).setDuration(500)
+    private fun playAnimation() {
+        val name = ObjectAnimator.ofFloat(binding.layoutName, View.ALPHA, 1F).setDuration(500)
         val email = ObjectAnimator.ofFloat(binding.layoutEmail, View.ALPHA, 1F).setDuration(500)
-        val password = ObjectAnimator.ofFloat(binding.layoutPassword, View.ALPHA, 1F).setDuration(500)
+        val password =
+            ObjectAnimator.ofFloat(binding.layoutPassword, View.ALPHA, 1F).setDuration(500)
 
         AnimatorSet().apply {
             playTogether(name, email, password)
             startDelay = (500)
         }.start()
 
-        ObjectAnimator.ofFloat(binding.btnSignup, View.ALPHA, 1F).apply{
+        ObjectAnimator.ofFloat(binding.btnSignup, View.ALPHA, 1F).apply {
             duration = 1200
             startDelay = (1200)
 
         }.start()
-
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
+
+
 }
