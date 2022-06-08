@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/fragment_dashboard"
+        android:icon="@drawable/ic_home"
+        android:title="@string/icon_home" />
+
+    <item
+        android:id="@+id/fragment_history"
+        android:icon="@drawable/ic_history"
+        android:title="@string/icon_history" />
+
+    <item
+        android:id="@+id/fragment_input"
+        android:icon="@drawable/ic_mic"
+        android:title="@string/icon_mic" />
+
+    <item
+        android:id="@+id/fragment_profile"
+        android:icon="@drawable/ic_profile"
+        android:title="@string/icon_user" />
+</menu>

@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">UsSpeak</string>
+
+    <string name="title_login">LOGIN</string>
+    <string name="title_signup">SIGN UP</string>
+    <string name="button_login">Log In</string>
+    <string name="button_signup">Sign Up</string>
+
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="signup">Sign up</string>
+    <string name="emotion">Emotion</string>
+    <string name="types">Our type of emotions</string>
+    <string name="logout">Log out</string>
+
+    <string name="duration">min:sec</string>
+    <string name="date">dd MMM yyyy</string>
+    <string name="browse">Browse</string>
+    <string name="no_file">No selected audio file</string>
+
+    <string name="dashboard_firstline">Practice your speaking now</string>
+    <string name="dashboard_secondline">This application will help you to improve your public speaking skills to the fullest. By analyzing your voice, we will definitely help boosting your confidence.</string>
+    <string name="dashboard_thirdline">Confidence is your number one weapon!</string>
+
+    <string name="dont_have_account">Don\'t have an account?</string>
+    <string name="choose_file">Choose an audio file</string>
+    <string name="desc_splashscreen">Public speaking</string>
+    <string name="desc_emotion">Your emotion</string>
+    <string name="desc_clock">Duration of recording</string>
+    <string name="desc_calendar">Recording date taken</string>
+    <string name="desc_circle_login">Accessory circle</string>
+    <string name="desc_profile">Profile picture</string>
+    <string name="desc_pencil">Edit profile</string>
+    <string name="desc_music">Music icon</string>
+
+    <string name="type_angry">Angry</string>
+    <string name="type_disgusted">Disgusted</string>
+    <string name="type_fearful">Fearful</string>
+    <string name="type_happy">Happy</string>
+    <string name="type_neutral">Neutral</string>
+    <string name="type_sad">Sad</string>
+    <string name="type_surprised">Surprised</string>
+
+    <string name="icon_home">Home</string>
+    <string name="icon_history">History</string>
+    <string name="icon_mic">Input</string>
+    <string name="icon_user">Profile</string>
+
+    <string name="button_record">Start Record</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="button_stop">Stop Record</string>
+    <string name="button_submit">Submit</string>
+</resources>

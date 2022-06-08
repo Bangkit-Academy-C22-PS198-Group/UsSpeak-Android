@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".model.page.DashboardFragment">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="@string/dashboard_firstline"
+                    android:textColor="@color/text_gray"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/dashboard_secondline"
+                    android:textColor="@color/gray"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="@string/dashboard_thirdline"
+                    android:textColor="@color/text_gray"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!--    <View-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="1dp"-->
+        <!--        android:layout_marginTop="24dp"-->
+        <!--        android:layout_marginBottom="24dp"-->
+        <!--        android:layout_marginStart="16dp"-->
+        <!--        android:layout_marginEnd="16dp"-->
+        <!--        android:background="@color/line_split" />-->
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="8dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/title_types"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="@string/types"
+                    android:textColor="@color/text_gray"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ic_happy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:contentDescription="@string/type_happy"
+                    android:src="@drawable/ic_emotion_happy"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/title_types" />
+
+                <TextView
+                    android:id="@+id/tv_happy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="@string/type_happy"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/ic_happy"
+                    app:layout_constraintStart_toEndOf="@id/ic_happy"
+                    app:layout_constraintTop_toTopOf="@id/ic_happy" />
+
+                <ImageView
+                    android:id="@+id/ic_neutral"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="36dp"
+                    android:contentDescription="@string/type_neutral"
+                    android:src="@drawable/ic_emotion_neutral"
+                    app:layout_constraintStart_toEndOf="@id/tv_happy"
+                    app:layout_constraintTop_toTopOf="@id/ic_happy" />
+
+                <TextView
+                    android:id="@+id/tv_neutral"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="@string/type_neutral"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/ic_neutral"
+                    app:layout_constraintStart_toEndOf="@id/ic_neutral"
+                    app:layout_constraintTop_toTopOf="@id/ic_neutral" />
+
+                <ImageView
+                    android:id="@+id/ic_sad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:contentDescription="@string/type_sad"
+                    android:src="@drawable/ic_emotion_sad"
+                    app:layout_constraintEnd_toEndOf="@id/ic_happy"
+                    app:layout_constraintStart_toStartOf="@id/ic_happy"
+                    app:layout_constraintTop_toBottomOf="@id/ic_happy" />
+
+                <TextView
+                    android:id="@+id/tv_sad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="@string/type_sad"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/ic_sad"
+                    app:layout_constraintStart_toStartOf="@id/tv_happy"
+                    app:layout_constraintTop_toTopOf="@id/ic_sad" />
+
+                <ImageView
+                    android:id="@+id/ic_surprised"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/type_surprised"
+                    android:src="@drawable/ic_emotion_surprised"
+                    app:layout_constraintBottom_toBottomOf="@id/ic_sad"
+                    app:layout_constraintEnd_toEndOf="@id/ic_neutral"
+                    app:layout_constraintStart_toStartOf="@id/ic_neutral"
+                    app:layout_constraintTop_toTopOf="@id/ic_sad" />
+
+                <TextView
+                    android:id="@+id/tv_surprised"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="@string/type_surprised"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/ic_surprised"
+                    app:layout_constraintStart_toStartOf="@id/tv_neutral"
+                    app:layout_constraintTop_toTopOf="@id/ic_surprised" />
+
+                <ImageView
+                    android:id="@+id/ic_fearful"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:contentDescription="@string/type_fearful"
+                    android:src="@drawable/ic_emotion_fearful"
+                    app:layout_constraintEnd_toEndOf="@id/ic_sad"
+                    app:layout_constraintStart_toStartOf="@id/ic_sad"
+                    app:layout_constraintTop_toBottomOf="@id/ic_sad" />
+
+                <TextView
+                    android:id="@+id/tv_fearful"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="@string/type_fearful"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/ic_fearful"
+                    app:layout_constraintStart_toEndOf="@id/ic_fearful"
+                    app:layout_constraintStart_toStartOf="@id/tv_sad"
+                    app:layout_constraintTop_toTopOf="@id/ic_fearful" />
+
+                <ImageView
+                    android:id="@+id/ic_angry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/type_angry"
+                    android:src="@drawable/ic_emotion_angry"
+                    app:layout_constraintBottom_toBottomOf="@id/ic_fearful"
+                    app:layout_constraintEnd_toEndOf="@id/ic_neutral"
+                    app:layout_constraintStart_toStartOf="@id/ic_neutral"
+                    app:layout_constraintTop_toTopOf="@id/ic_fearful" />
+
+                <TextView
+                    android:id="@+id/tv_angry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="@string/type_angry"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/ic_angry"
+                    app:layout_constraintStart_toStartOf="@id/tv_neutral"
+                    app:layout_constraintTop_toTopOf="@id/ic_angry" />
+
+                <ImageView
+                    android:id="@+id/ic_disgusted"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:contentDescription="@string/type_disgusted"
+                    android:paddingBottom="16dp"
+                    android:src="@drawable/ic_emotion_disgusted"
+                    app:layout_constraintStart_toStartOf="@id/ic_happy"
+                    app:layout_constraintTop_toBottomOf="@id/ic_fearful" />
+
+                <TextView
+                    android:id="@+id/tv_disgusted"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="@string/type_disgusted"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/ic_disgusted"
+                    app:layout_constraintStart_toEndOf="@id/ic_disgusted"
+                    app:layout_constraintTop_toTopOf="@id/ic_disgusted" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+</ScrollView>
