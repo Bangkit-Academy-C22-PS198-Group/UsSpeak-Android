@@ -3,18 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Capstone bos/UsSpeak-Android/app/src/main/res/layout/activity_login.xml" value="0.13095238095238096" />
-        <entry key="..\:/Capstone bos/UsSpeak-Android/app/src/main/res/layout/activity_register.xml" value="0.19610507246376813" />
-        <entry key="..\:/Capstone bos/UsSpeak-Android/app/src/main/res/layout/fragment_history.xml" value="0.19610507246376813" />
-        <entry key="..\:/Capstone bos/UsSpeak-Android/app/src/main/res/layout/fragment_input.xml" value="0.19610507246376813" />
-        <entry key="..\:/Capstone bos/UsSpeak-Android/app/src/main/res/layout/fragment_profile.xml" value="0.19610507246376813" />
-        <entry key="..\:/Capstone bos/UsSpeak-Android/app/src/main/res/layout/row_history.xml" value="0.19610507246376813" />
         <entry key="..\:/Programming/Semester-6/Bangkit/UsSpeak-Android/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/Semester-6/Bangkit/UsSpeak-Android/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/Semester-6/Bangkit/UsSpeak-Android/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/Semester-6/Bangkit/UsSpeak-Android/app/src/main/res/layout/fragment_history.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/Semester-6/Bangkit/UsSpeak-Android/app/src/main/res/layout/fragment_input.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/Semester-6/Bangkit/UsSpeak-Android/app/src/main/res/layout/fragment_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Programming/Semester-6/Bangkit/UsSpeak-Android/app/src/main/res/layout/row_history.xml" value="0.264" />
+        <entry key="..\:/Programming/Semester-6/Bangkit/UsSpeak-Android/app/src/main/res/menu/option_menu.xml" value="0.11302083333333333" />
         <entry key="..\:/Programming/Semester-6/Bangkit/UsSpeak/app/src/main/res/drawable/circle_shape.xml" value="0.1" />
         <entry key="..\:/Programming/Semester-6/Bangkit/UsSpeak/app/src/main/res/drawable/option_menu.xml" value="0.1" />
         <entry key="..\:/Programming/Semester-6/Bangkit/UsSpeak/app/src/main/res/font/inter_bold.xml" value="0.1" />

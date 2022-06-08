@@ -5,5 +5,5 @@
         android:id="@+id/btn_logout"
         android:icon="@drawable/ic_baseline_exit"
         android:title="@string/logout"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="collapseActionView" />
 </menu>

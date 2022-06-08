@@ -1,27 +1,26 @@
 package com.example.usspeak.response
 
-import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.parcelize.Parcelize
-import java.util.*
 
-@Parcelize
 data class HistoryResponse(
-    @SerializedName("emotion")
-    var emotion: String? = null,
 
-    @SerializedName("date")
-    var dateTaken: Date,
+    @field:SerializedName("items")
+    val items: List<DataItem>
+) {
+    data class DataItem(
 
-    @SerializedName("duration")
-    var duration: String,
+        @field:SerializedName("date")
+        val date: String? = null,
 
-    @SerializedName("suggestion")
-    var suggestion: String? = null,
+        @field:SerializedName("duration")
+        val duration: String? = null,
 
-    @SerializedName("filename")
-    var fileName: String,
+        @field:SerializedName("emotion")
+        val emotion: String? = null,
 
-    @SerializedName("data")
-    var audioFile: String
-): Parcelable
+        @field:SerializedName("suggestion")
+        val suggestion: String? = null
+    )
+}
+
+

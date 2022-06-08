@@ -54,8 +54,18 @@ class HistoryFragment : Fragment() {
         }
     }
 
-    private fun setList(data: HistoryResponse) {
-        val listHistory = listOf(data)
+    private fun setList(data: List<HistoryResponse.DataItem>) {
+        val listHistory = ArrayList<HistoryResponse.DataItem>()
+        for (item in data) {
+            val duration = item.duration.toString().split("\"")[1].split("\"")[0]
+            val history = HistoryResponse.DataItem(
+                item.date,
+                duration,
+                item.emotion,
+                item.suggestion
+            )
+            listHistory.add(history)
+        }
 
         val adapter = HistoryAdapter(listHistory, context)
         binding.rvHistory.adapter = adapter

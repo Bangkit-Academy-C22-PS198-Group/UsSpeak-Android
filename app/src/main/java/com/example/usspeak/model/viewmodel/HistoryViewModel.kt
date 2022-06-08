@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import com.example.usspeak.repository.HistoryRepository
 import com.example.usspeak.repository.HistoryRepositoryImpl
 import com.example.usspeak.response.HistoryResponse
-import java.util.*
 
 class HistoryViewModel : ViewModel() {
     private val historyRepository: HistoryRepository
@@ -15,8 +14,8 @@ class HistoryViewModel : ViewModel() {
         historyRepository = HistoryRepositoryImpl()
     }
 
-    private val _observableHistory = MutableLiveData<HistoryResponse?>()
-    val observableHistory: LiveData<HistoryResponse?>
+    private val _observableHistory = MutableLiveData<List<HistoryResponse.DataItem>>()
+    val observableHistory: LiveData<List<HistoryResponse.DataItem>>
         get() = _observableHistory
 
     private val _observableError = MutableLiveData<Throwable>()
@@ -28,7 +27,7 @@ class HistoryViewModel : ViewModel() {
             _observableHistory.value = it
         }) {
             _observableError.value = it
-            _observableHistory.value = HistoryResponse("", Date(), "", "", "", "")
+            _observableHistory.value = emptyList()
         }
     }
 }

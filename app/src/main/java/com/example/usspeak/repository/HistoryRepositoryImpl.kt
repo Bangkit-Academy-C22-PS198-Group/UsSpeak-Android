@@ -5,13 +5,12 @@ import com.example.usspeak.response.HistoryResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.util.*
 
 class HistoryRepositoryImpl : HistoryRepository {
 
     override fun getHistory(
         token: String,
-        onSuccess: (HistoryResponse?) -> Unit,
+        onSuccess: (List<HistoryResponse.DataItem>) -> Unit,
         onFailure: (Throwable) -> Unit
     ) {
         ApiConfig.ApiService.getHistory(token).enqueue(object : Callback<HistoryResponse> {
@@ -21,7 +20,9 @@ class HistoryRepositoryImpl : HistoryRepository {
             ) {
                 if (response.isSuccessful) {
                     val body = response.body()
-                    onSuccess(body)
+                    if (body != null) {
+                        onSuccess(body.items)
+                    }
                 } else {
                     onFailure(Exception("Network Error"))
                 }

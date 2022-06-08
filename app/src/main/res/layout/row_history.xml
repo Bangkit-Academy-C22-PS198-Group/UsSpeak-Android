@@ -52,7 +52,7 @@
 
         <TextView
             android:id="@+id/tv_duration"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
@@ -75,9 +75,10 @@
 
         <TextView
             android:id="@+id/tv_date"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:maxLines="2"
             android:text="@string/date"
             android:textColor="@color/text_gray"
             app:layout_constraintStart_toStartOf="@id/tv_duration"
