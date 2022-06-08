@@ -1,60 +1,80 @@
 package com.example.usspeak.model.page
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.usspeak.R
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.usspeak.adapter.HistoryAdapter
+import com.example.usspeak.api.TokenPref
+import com.example.usspeak.databinding.FragmentHistoryBinding
+import com.example.usspeak.model.viewmodel.HistoryViewModel
+import com.example.usspeak.response.HistoryResponse
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [HistoryFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class HistoryFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var _binding: FragmentHistoryBinding? = null
+    private val binding get() = _binding!!
+    private lateinit var viewModel: HistoryViewModel
+    private lateinit var tokenPref: TokenPref
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+        viewModel = ViewModelProvider(this)[HistoryViewModel::class.java]
+        tokenPref = TokenPref((activity?.applicationContext ?: "") as Context)
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_history, container, false)
+    ): View {
+        _binding = FragmentHistoryBinding.inflate(inflater, container, false)
+        binding.rvHistory.layoutManager = LinearLayoutManager(context)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        showLoading(true)
+        viewModel.getHistory(tokenPref.getToken())
+        viewModel.observableHistory.observe(viewLifecycleOwner) {
+            showLoading(false)
+            if (it != null) {
+                setList(it)
+            }
+        }
+        viewModel.observableError.observe(viewLifecycleOwner) { data ->
+            showLoading(false)
+            Log.e(TAG, data?.message.toString())
+            Toast.makeText(context, data.message, Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun setList(data: HistoryResponse) {
+        val listHistory = listOf(data)
+
+        val adapter = HistoryAdapter(listHistory, context)
+        binding.rvHistory.adapter = adapter
+    }
+
+    private fun showLoading(state: Boolean) {
+        if (state) {
+            binding.progressBar.visibility = View.VISIBLE
+        } else {
+            binding.progressBar.visibility = View.GONE
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HistoryFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HistoryFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        const val TAG = "HistoryFragment"
     }
 }

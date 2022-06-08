@@ -2,7 +2,7 @@ package com.example.usspeak.response
 
 import com.google.gson.annotations.SerializedName
 
-data class UserResponse (
+data class UserResponse(
     @SerializedName("error")
     var error: String,
 

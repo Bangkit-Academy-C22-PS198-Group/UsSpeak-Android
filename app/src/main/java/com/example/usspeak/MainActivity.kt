@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         tokenPref = TokenPref(this)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            if(tokenPref.getToken() == "") {
+            if (tokenPref.getToken() == "") {
                 val loginIntent = Intent(this@MainActivity, LoginActivity::class.java)
                 startActivity(loginIntent)
                 finish()

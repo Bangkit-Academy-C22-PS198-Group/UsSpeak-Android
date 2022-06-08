@@ -1,5 +1,6 @@
 package com.example.usspeak.model.page
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -22,7 +23,6 @@ class HomeActivity : AppCompatActivity() {
         _binding = ActivityHomeBinding.inflate(LayoutInflater.from(this), null, false)
         setContentView(binding.root)
         tokenPref = TokenPref(this)
-        Log.e("Token: ", tokenPref.getToken())
 
         navController = Navigation.findNavController(this, R.id.nav_host_fragment)
         setupWithNavController(binding.navView, navController)

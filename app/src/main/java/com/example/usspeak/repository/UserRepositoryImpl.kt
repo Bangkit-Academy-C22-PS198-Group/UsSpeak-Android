@@ -7,15 +7,15 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class UserRepositoryImpl: UserRepository {
+class UserRepositoryImpl : UserRepository {
     override fun loginUser(
         userRequest: UserRequest,
         onSuccess: (UserResponse?) -> Unit,
         onFailure: (Throwable) -> Unit
     ) {
-        ApiConfig.ApiService.loginUser(userRequest).enqueue(object: Callback<UserResponse> {
+        ApiConfig.ApiService.loginUser(userRequest).enqueue(object : Callback<UserResponse> {
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
-                if(response.isSuccessful) {
+                if (response.isSuccessful) {
                     val body = response.body()
                     onSuccess(body)
                 } else {
@@ -36,7 +36,7 @@ class UserRepositoryImpl: UserRepository {
     ) {
         ApiConfig.ApiService.registerUser(userRequest).enqueue(object : Callback<UserResponse> {
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
-                if(response.isSuccessful) {
+                if (response.isSuccessful) {
                     val body = response.body()
                     onSuccess(body)
                 } else {

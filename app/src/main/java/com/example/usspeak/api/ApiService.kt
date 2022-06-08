@@ -1,9 +1,12 @@
 package com.example.usspeak.api
 
+import com.example.usspeak.response.HistoryResponse
 import com.example.usspeak.response.UserRequest
 import com.example.usspeak.response.UserResponse
 import retrofit2.Call
 import retrofit2.http.Body
+import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.POST
 
 interface ApiService {
@@ -16,4 +19,9 @@ interface ApiService {
     fun registerUser(
         @Body userRequest: UserRequest
     ): Call<UserResponse>
+
+    @GET("history")
+    fun getHistory(
+        @Header("Authorization") value: String
+    ): Call<HistoryResponse>
 }
