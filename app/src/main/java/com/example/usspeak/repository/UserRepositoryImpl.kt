@@ -49,4 +49,47 @@ class UserRepositoryImpl : UserRepository {
             }
         })
     }
+
+    override fun getUser(
+        token: String,
+        onSuccess: (UserResponse?) -> Unit,
+        onFailure: (Throwable) -> Unit
+    ) {
+        ApiConfig.ApiService.getUser(token).enqueue(object: Callback<UserResponse> {
+            override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
+                if(response.isSuccessful) {
+                    val body = response.body()
+                    onSuccess(body)
+                } else {
+                    onFailure(Exception("Network Error"))
+                }
+            }
+
+            override fun onFailure(call: Call<UserResponse>, t: Throwable) {
+                onFailure(t)
+            }
+        })
+    }
+
+    override fun renameUser(
+        name: String,
+        token: String,
+        onSuccess: (UserResponse?) -> Unit,
+        onFailure: (Throwable) -> Unit
+    ) {
+        ApiConfig.ApiService.renameUser(token, name).enqueue(object: Callback<UserResponse> {
+            override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
+                if(response.isSuccessful) {
+                    val body = response.body()
+                    onSuccess(body)
+                } else {
+                    onFailure(Exception("Network Error"))
+                }
+            }
+
+            override fun onFailure(call: Call<UserResponse>, t: Throwable) {
+                onFailure(t)
+            }
+        })
+    }
 }

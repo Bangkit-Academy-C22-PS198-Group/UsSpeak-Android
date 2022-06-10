@@ -15,4 +15,17 @@ interface UserRepository {
         onSuccess: (UserResponse?) -> Unit,
         onFailure: (Throwable) -> Unit
     )
+
+    fun getUser(
+        token: String,
+        onSuccess: (UserResponse?) -> Unit,
+        onFailure: (Throwable) -> Unit
+    )
+
+    fun renameUser(
+        name: String,
+        token: String,
+        onSuccess: (UserResponse?) -> Unit,
+        onFailure: (Throwable) -> Unit
+    )
 }

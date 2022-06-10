@@ -35,6 +35,7 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.btnLogin.setOnClickListener {
+            showLoading(true)
             val request = UserRequest(
                 null,
                 binding.edtEmail.text.toString().trim(),
@@ -48,7 +49,8 @@ class LoginActivity : AppCompatActivity() {
     private fun loginUser(request: UserRequest) {
         viewModel.loginUser(request)
         viewModel.observableUser.observe(this) { data ->
-            val token = data.token
+            showLoading(false)
+            val token = data!!.token
             tokenPref.setToken(token)
 
             val homeIntent = Intent(this, HomeActivity::class.java)
@@ -56,6 +58,7 @@ class LoginActivity : AppCompatActivity() {
             finish()
         }
         viewModel.observableError.observe(this) { data ->
+            showLoading(false)
             Toast.makeText(this@LoginActivity, data.message, Toast.LENGTH_SHORT).show()
         }
     }
@@ -76,6 +79,14 @@ class LoginActivity : AppCompatActivity() {
             duration = 1200
             startDelay = (1200)
         }.start()
+    }
+
+    private fun showLoading(state: Boolean) {
+        if(state) {
+            binding.progressBar.visibility = View.VISIBLE
+        } else {
+            binding.progressBar.visibility = View.GONE
+        }
     }
 
     override fun onDestroy() {

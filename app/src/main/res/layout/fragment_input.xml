@@ -32,7 +32,7 @@
             android:id="@+id/btn_browse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right|center"
+            android:layout_gravity="end|center"
             android:layout_marginEnd="16dp"
             android:backgroundTint="@color/purple"
             android:hint="@string/browse"
@@ -50,6 +50,7 @@
         app:layout_constraintTop_toBottomOf="@id/layout_card_chooser">
 
         <TextView
+            android:id="@+id/tv_file_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
@@ -80,7 +81,6 @@
         style="?android:progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

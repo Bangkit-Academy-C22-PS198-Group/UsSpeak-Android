@@ -1,5 +1,6 @@
 package com.example.usspeak.response
 
+import android.provider.ContactsContract
 import com.google.gson.annotations.SerializedName
 
 data class UserResponse(
@@ -10,5 +11,14 @@ data class UserResponse(
     var message: String,
 
     @SerializedName("token")
-    var token: String
+    var token: String,
+
+    @SerializedName("name")
+    var name: String? = null,
+
+    @SerializedName("email")
+    var email: String? = null,
+
+    @SerializedName("picture")
+    var picture: String? = null
 )

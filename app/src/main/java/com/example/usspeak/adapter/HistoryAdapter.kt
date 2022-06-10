@@ -17,7 +17,7 @@ class HistoryAdapter(
         val emotion = binding.tvEmotion
         val duration = binding.tvDuration
         val date = binding.tvDate
-        val emoji = binding.ivEmotion
+        val icon = binding.ivEmotion
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -29,7 +29,8 @@ class HistoryAdapter(
         holder.emotion.text = listHistory[position].emotion
         holder.duration.text = listHistory[position].duration
         holder.date.text = listHistory[position].date.toString()
-        val icon = when (listHistory[position].emotion) {
+
+        val emoji = when (listHistory[position].emotion) {
             "Sad" -> R.drawable.ic_emotion_sad
             "Happy" -> R.drawable.ic_emotion_happy
             "Fearful" -> R.drawable.ic_emotion_fearful
@@ -39,11 +40,12 @@ class HistoryAdapter(
             "Angry" -> R.drawable.ic_emotion_angry
             else -> R.drawable.placeholder_circle
         }
+
         Glide.with(holder.itemView)
-            .load(icon)
+            .load(emoji)
             .placeholder(R.drawable.placeholder_circle)
             .error(R.drawable.placeholder_circle)
-            .into(holder.emoji)
+            .into(holder.icon)
     }
 
     override fun getItemCount(): Int = listHistory.size
