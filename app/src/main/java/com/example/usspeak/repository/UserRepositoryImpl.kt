@@ -55,9 +55,9 @@ class UserRepositoryImpl : UserRepository {
         onSuccess: (UserResponse?) -> Unit,
         onFailure: (Throwable) -> Unit
     ) {
-        ApiConfig.ApiService.getUser(token).enqueue(object: Callback<UserResponse> {
+        ApiConfig.ApiService.getUser(token).enqueue(object : Callback<UserResponse> {
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
-                if(response.isSuccessful) {
+                if (response.isSuccessful) {
                     val body = response.body()
                     onSuccess(body)
                 } else {
@@ -77,9 +77,9 @@ class UserRepositoryImpl : UserRepository {
         onSuccess: (UserResponse?) -> Unit,
         onFailure: (Throwable) -> Unit
     ) {
-        ApiConfig.ApiService.renameUser(token, name).enqueue(object: Callback<UserResponse> {
+        ApiConfig.ApiService.renameUser(token, name).enqueue(object : Callback<UserResponse> {
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
-                if(response.isSuccessful) {
+                if (response.isSuccessful) {
                     val body = response.body()
                     onSuccess(body)
                 } else {

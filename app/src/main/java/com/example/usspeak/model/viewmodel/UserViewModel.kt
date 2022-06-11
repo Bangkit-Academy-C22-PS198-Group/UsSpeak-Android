@@ -7,7 +7,7 @@ import com.example.usspeak.repository.UserRepository
 import com.example.usspeak.repository.UserRepositoryImpl
 import com.example.usspeak.response.UserResponse
 
-class UserViewModel: ViewModel() {
+class UserViewModel : ViewModel() {
     private val userRepository: UserRepository
 
     init {
@@ -15,15 +15,15 @@ class UserViewModel: ViewModel() {
     }
 
     private val _observableUser = MutableLiveData<UserResponse?>()
-    val observableUser : LiveData<UserResponse?>
+    val observableUser: LiveData<UserResponse?>
         get() = _observableUser
 
     private val _observableUpdatedUser = MutableLiveData<UserResponse?>()
-    val observableUpdatedUser : LiveData<UserResponse?>
+    val observableUpdatedUser: LiveData<UserResponse?>
         get() = _observableUpdatedUser
 
     private val _observableError = MutableLiveData<Throwable>()
-    val observableError : LiveData<Throwable>
+    val observableError: LiveData<Throwable>
         get() = _observableError
 
     fun getUser(token: String) {

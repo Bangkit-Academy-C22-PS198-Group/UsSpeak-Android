@@ -5,7 +5,6 @@ import com.example.usspeak.response.UserRequest
 import com.example.usspeak.response.UserResponse
 import okhttp3.MultipartBody
 import retrofit2.Call
-import retrofit2.Callback
 import retrofit2.http.*
 
 interface ApiService {

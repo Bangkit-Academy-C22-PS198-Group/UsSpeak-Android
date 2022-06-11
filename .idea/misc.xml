@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Programming/Semester-6/Bangkit/UsSpeak-Android/app/src/main/res/drawable/ic_profile.xml" value="0.213" />
         <entry key="..\:/Programming/Semester-6/Bangkit/UsSpeak-Android/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/Semester-6/Bangkit/UsSpeak-Android/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/Semester-6/Bangkit/UsSpeak-Android/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
+        <entry key="..\:/Programming/Semester-6/Bangkit/UsSpeak-Android/app/src/main/res/layout/fragment_change_profile.xml" value="0.25181159420289856" />
         <entry key="..\:/Programming/Semester-6/Bangkit/UsSpeak-Android/app/src/main/res/layout/fragment_history.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/Semester-6/Bangkit/UsSpeak-Android/app/src/main/res/layout/fragment_input.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/Semester-6/Bangkit/UsSpeak-Android/app/src/main/res/layout/fragment_profile.xml" value="0.25416666666666665" />

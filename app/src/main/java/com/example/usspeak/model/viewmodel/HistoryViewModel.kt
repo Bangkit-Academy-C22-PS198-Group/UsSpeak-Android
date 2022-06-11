@@ -21,7 +21,7 @@ class HistoryViewModel : ViewModel() {
         get() = _observableHistory
 
     private val _observableAudio = MutableLiveData<UserResponse?>()
-    val observableAudio : LiveData<UserResponse?>
+    val observableAudio: LiveData<UserResponse?>
         get() = _observableAudio
 
     private val _observableError = MutableLiveData<Throwable>()

@@ -44,7 +44,7 @@ class HistoryRepositoryImpl : HistoryRepository {
     ) {
         ApiConfig.ApiService.uploadAudio(token, file).enqueue(object : Callback<UserResponse> {
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
-                if(response.isSuccessful) {
+                if (response.isSuccessful) {
                     val body = response.body()
                     if (body != null) {
                         onSuccess(body)

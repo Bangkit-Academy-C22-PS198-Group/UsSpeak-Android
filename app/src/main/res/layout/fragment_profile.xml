@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frame_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
@@ -26,7 +27,8 @@
                 android:layout_height="120dp"
                 android:layout_gravity="center"
                 android:contentDescription="@string/desc_profile"
-                android:src="@drawable/placeholder_circle"
+                android:src="@drawable/ic_profile"
+                android:background="@drawable/placeholder_circle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

@@ -49,7 +49,7 @@ class InputFragment : Fragment() {
 
         binding.btnBrowse.setOnClickListener {
             startGallery()
-            if(getFile != null) {
+            if (getFile != null) {
                 binding.tvFileName.text = getFile?.name.toString()
                 Log.e(TAG, getFile?.name.toString())
             }
@@ -57,7 +57,7 @@ class InputFragment : Fragment() {
 
         binding.btnSubmit.setOnClickListener {
             showLoading(true)
-            if(getFile != null) {
+            if (getFile != null) {
                 val requestAudioFile = getFile!!.asRequestBody("audio/mp3".toMediaTypeOrNull())
                 val audioMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
                     "file",
@@ -66,7 +66,7 @@ class InputFragment : Fragment() {
                 )
                 viewModel.uploadAudio(tokenPref.getToken(), audioMultipart)
                 viewModel.observableAudio.observe(viewLifecycleOwner) { data ->
-                showLoading(false)
+                    showLoading(false)
                     Toast.makeText(context, data?.message, Toast.LENGTH_SHORT).show()
                 }
 
@@ -100,7 +100,7 @@ class InputFragment : Fragment() {
     }
 
     private fun showLoading(state: Boolean) {
-        if(state) {
+        if (state) {
             binding.progressBar.visibility = View.VISIBLE
         } else {
             binding.progressBar.visibility = View.GONE

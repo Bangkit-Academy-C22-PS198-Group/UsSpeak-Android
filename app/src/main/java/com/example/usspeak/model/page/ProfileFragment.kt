@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
+import com.example.usspeak.R
 import com.example.usspeak.api.TokenPref
 import com.example.usspeak.databinding.FragmentProfileBinding
 import com.example.usspeak.model.viewmodel.UserViewModel
@@ -30,15 +32,16 @@ class ProfileFragment : Fragment() {
     ): View {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this)[UserViewModel::class.java]
+        showLoading(true)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        showLoading(false)
         viewModel.getUser(tokenPref.getToken())
 
         viewModel.observableUser.observe(viewLifecycleOwner) { data ->
+            showLoading(false)
             binding.tvName.text = data?.name
             binding.tvEmail.text = data?.email
         }
@@ -48,7 +51,12 @@ class ProfileFragment : Fragment() {
         }
 
         binding.btnPencil.setOnClickListener {
+            viewModel.observableUser.observe(viewLifecycleOwner) { data ->
+                ChangeProfileFragment.NAME = data?.name.toString()
+                ChangeProfileFragment.EMAIL = data?.email.toString()
+            }
 
+            Navigation.findNavController(view).navigate(R.id.fragment_change_profile)
         }
     }
 

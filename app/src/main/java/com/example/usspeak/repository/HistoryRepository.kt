@@ -3,7 +3,6 @@ package com.example.usspeak.repository
 import com.example.usspeak.response.HistoryResponse
 import com.example.usspeak.response.UserResponse
 import okhttp3.MultipartBody
-import retrofit2.http.Multipart
 
 interface HistoryRepository {
     fun getHistory(

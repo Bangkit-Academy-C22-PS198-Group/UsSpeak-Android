@@ -1,6 +1,5 @@
 package com.example.usspeak.response
 
-import android.provider.ContactsContract
 import com.google.gson.annotations.SerializedName
 
 data class UserResponse(

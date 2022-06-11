@@ -17,11 +17,12 @@
             android:id="@+id/iv_emotion"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_marginStart="36dp"
             android:contentDescription="@string/desc_emotion"
             android:scaleType="centerCrop"
             android:src="@drawable/placeholder_circle"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.15"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
