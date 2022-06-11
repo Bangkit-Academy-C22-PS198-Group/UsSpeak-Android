@@ -35,4 +35,10 @@
         android:label="fragment_change_profile"
         tools:layout="@layout/fragment_change_profile" />
 
+    <fragment
+        android:id="@+id/fragment_history_detail"
+        android:name="com.example.usspeak.model.page.HistoryDetailFragment"
+        android:label="fragment_history_detail"
+        tools:layout="@layout/fragment_history_detail" />
+
 </navigation>

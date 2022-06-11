@@ -3,10 +3,12 @@ package com.example.usspeak.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.usspeak.R
 import com.example.usspeak.databinding.RowHistoryBinding
+import com.example.usspeak.model.page.HistoryDetailFragment
 import com.example.usspeak.response.HistoryResponse
 
 class HistoryAdapter(
@@ -46,6 +48,15 @@ class HistoryAdapter(
             .placeholder(R.drawable.placeholder_circle)
             .error(R.drawable.placeholder_circle)
             .into(holder.icon)
+
+        holder.itemView.setOnClickListener {
+            HistoryDetailFragment.DATE = listHistory[position].date.toString()
+            HistoryDetailFragment.DURATION = listHistory[position].duration.toString()
+            HistoryDetailFragment.SUGGESTION = listHistory[position].suggestion.toString()
+            HistoryDetailFragment.EMOTION = listHistory[position].emotion.toString()
+            Navigation.findNavController(it).navigate(R.id.fragment_history_detail)
+        }
+
     }
 
     override fun getItemCount(): Int = listHistory.size

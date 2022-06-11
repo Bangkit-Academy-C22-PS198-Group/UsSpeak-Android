@@ -19,6 +19,7 @@
     <string name="date">dd MMM yyyy</string>
     <string name="browse">Browse</string>
     <string name="no_file">No selected audio file</string>
+    <string name="suggestion">Suggestion</string>
 
     <string name="dashboard_firstline">Practice your speaking now</string>
     <string name="dashboard_secondline">This application will help you to improve your public speaking skills to the fullest. By analyzing your voice, we will definitely help boosting your confidence.</string>
